@@ -1,3 +1,15 @@
+import random
+import time
+
+def random_numbers_generator():
+    l = []
+    for i in range(9):
+        l.append(random.randint(0,9))
+    return l
+
+unsorted_l = random_numbers_generator()
+
+
 class LinkedList:
     def __init__(self, nodes = None):
         self.head = None # creating the starting point of the linked list
@@ -15,7 +27,7 @@ class LinkedList:
             nodes.append(node.data)
             node = node.next
         nodes.append('None')
-        return '-->'.join(nodes)
+        return str(nodes)
     
 
 class Node: # creating the two main elements of the node data and next pointer
@@ -27,6 +39,8 @@ class Node: # creating the two main elements of the node data and next pointer
         return self.data
 
 llist = LinkedList(['a', 'b', 'c', 'd', 'e'])
+llist2 = LinkedList(unsorted_l)
 
 
 print(llist)
+print(llist2)
